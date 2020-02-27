@@ -1,4 +1,4 @@
-# Stopwatch with ounter
+# Stopwatch with counter
 
 *This plug-in is in-progress, and may not work correctly.*
 
