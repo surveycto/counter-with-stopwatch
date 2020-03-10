@@ -125,11 +125,11 @@ function restartconf(restarter) {
             ssButton.classList.remove('buttonstop');
             ssButton.innerHTML = "Start";
             ssButton.disabled = false;
-            setAnswer()
         }
         else if (restarter == 'counter') {
             countDisp.innerHTML = counter = 0;
         }
+        setAns();
         confirmation.innerHTML = null;
     });
 
