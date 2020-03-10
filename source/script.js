@@ -1,4 +1,4 @@
-fieldProperties = {
+/*fieldProperties = {
     'PARAMETERS': [
         {
             'key': 'A',
@@ -8,8 +8,8 @@ fieldProperties = {
             'key': 'B',
             'value': 's'
         }
-    ]/*,
-    'CURRENT_ANSWER': '10 1000'*/
+    ],
+    'CURRENT_ANSWER': '0 1000'
 }// Above for testing only */
 
 var swDisp = document.querySelector('#stopwatch');
@@ -26,9 +26,10 @@ var timeStart = 0;
 var unit = 's'; //Default, may be changed
 var round = 1000; //Default, may be changed
 var timePassed = 0; //Time passed so far
+
 switch (numParam) {
-    case 2:
-        unit = fieldProperties.PARAMETERS[1].value;
+    case 1:
+        unit = parameters[0].value;
 
         if (unit == 'ms') {
             unit = ' milliseconds'
@@ -46,8 +47,6 @@ switch (numParam) {
             unit = ' seconds';
             round = 1000;
         }
-    case 1:
-        timeStart = parameters[0].value * 1000; //Time limit on each field in seconds\
 }
 
 var complete = false;
