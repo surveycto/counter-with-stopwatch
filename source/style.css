@@ -12,7 +12,7 @@ div{
     font-weight: 300;
 }
 
-.buttons, #timer, #countdiv{
+.buttons, #stopwatch, #countdiv{
     text-align: center;
     margin-bottom: 10px;
 }
