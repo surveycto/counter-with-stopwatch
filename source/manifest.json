@@ -1,5 +1,5 @@
 {
-	"name" : "Stopwatch with counter",
+	"name" : "Counter with timer",
 	"author" : "Dobility",
 	"version": "1.0.1",
 	"supportedFieldTypes": ["text"]

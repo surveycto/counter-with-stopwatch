@@ -1,11 +1,39 @@
-<link rel="stylesheet" type="text/css" href="style.css">
-<script src="script.js" defer></script>
+<!--link rel="stylesheet" type="text/css" href="style.css">
+<script src="script.js" defer></script-->
+
 <div class="label default-question-text-size" id="label">{{{LABEL}}}</div>
+
+{{#MEDIAIMAGE}}
+    <img src="{{MEDIAIMAGE}}" />
+{{/MEDIAIMAGE}}
+
+{{#MEDIAAUDIO}}
+    <audio controls>
+        <source src="{{MEDIAAUDIO}}">
+        Your browser does not support the audio element.
+    </audio>
+{{/MEDIAAUDIO}}
+
+{{#MEDIAVIDEO}}
+    <video width="100%" height="*" controls>
+        <source src="{{MEDIAVIDEO}}">
+        Your browser does not support the video tag.
+    </video>
+{{/MEDIAVIDEO}}
+
 <div class="hint default-hint-text-size" id="hint">{{{HINT}}}</div>
 <div id="timer" class="label default-question-text-size"></div>
-<div id="countdiv">Count:&nbsp;<span id="count"></span></div>
+<div id="countdiv">Count:&nbsp;<span id="count">0</span></div>
 <div class="buttons label default-question-text-size">
-    <span id="buttonsst"><button onclick="startStopTimer()" class="startstop" id="startstop">Start</button></span><br>
-    <button onclick="countup()" class="counterup" id="counterup">Counter</button><br>
-    <button onclick="countdown()" class="counterdown" id="counterdown" style="font-size: 10pt;">Counter down</button>
+    <button onclick="startStopTimer()" class="startstop" id="startstop">Start</button><br>
+    <button onclick="countup()" class="counterup" id="counterup">Count +</button><br>
+    <button onclick="countdown()" class="counterdown small" id="counterdown" style="font-size: 10pt;">Count -</button>
+</div>
+<div id="restartbuttons" class="buttons label default-question-text-size">
+    <button onclick="restartconf('timer')" id="restarttimer" class="small">Restart
+        timer</button>
+    <button onclick="restartconf('counter')"id="restartcounter" class="small">Restart
+        counter</button><br>
+        <button onclick="endEarly()" id="endearly" class="small endearly">End early</button>
+    <div id="confirmation" style="margin-top: 10px;"></div>
 </div>
