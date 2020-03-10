@@ -1,9 +1,9 @@
 # Stopwatch with counter (in alpha)
 
-<!--![](extras/preview-images/paused.png)
-|<img src="extras/preview-images/running.png" width="100px">|<img src="extras/preview-images/end-early-warning.png" width="100px">|<img src="extras/preview-images/timer-end.png" width="100px">|
+![start](extras/preview-images/start.png)
+|<img src="extras/preview-images/running.png" width="100px">|<img src="extras/preview-images/paused.png" width="100px">|<img src="extras/preview-images/confirm-restart.png" width="100px">|
 |:---:|:---:|:---:|
-|Running|Warning|Ended|-->
+|Running|Paused|Warning|
 
 *This plug-in is currently being tested, but has so far worked well.*
 
