@@ -87,7 +87,7 @@ function startStopTimer() {
         startTime = Date.now() - timePassed;
         timerRunning = true;
         ssButton.innerHTML = "Stop";
-        setAnswer();
+        setAnswer('');
     }
 }
 
