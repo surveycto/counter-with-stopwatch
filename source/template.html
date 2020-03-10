@@ -1,5 +1,5 @@
-<!--link rel="stylesheet" type="text/css" href="style.css">
-<script src="script.js" defer></script-->
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="script.js" defer></script>
 
 <div class="label default-question-text-size" id="label">{{{LABEL}}}</div>
 
@@ -22,7 +22,7 @@
 {{/MEDIAVIDEO}}
 
 <div class="hint default-hint-text-size" id="hint">{{{HINT}}}</div>
-<div id="timer" class="label default-question-text-size"></div>
+<div id="stopwatch" class="label default-question-text-size"></div>
 <div id="countdiv">Count:&nbsp;<span id="count">0</span></div>
 <div class="buttons label default-question-text-size">
     <button onclick="startStopTimer()" class="startstop" id="startstop">Start</button><br>
@@ -33,7 +33,6 @@
     <button onclick="restartconf('timer')" id="restarttimer" class="small">Restart
         timer</button>
     <button onclick="restartconf('counter')"id="restartcounter" class="small">Restart
-        counter</button><br>
-        <button onclick="endEarly()" id="endearly" class="small endearly">End early</button>
+        counter</button>
     <div id="confirmation" style="margin-top: 10px;"></div>
 </div>

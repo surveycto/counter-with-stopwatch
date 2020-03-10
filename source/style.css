@@ -61,14 +61,6 @@ button:active{
     border-radius: 60px;
 }
 
-.buttonstop{
-    color: red;
-    background-color: #c1c1c1;
-    font-size: 24pt;
-    cursor: default;
-    box-shadow: none ;
-}
-
 button.whitebutton, button.bluebutton {
     width: 55px;
     height: 38px;
