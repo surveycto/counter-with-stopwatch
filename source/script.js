@@ -2,17 +2,14 @@
     'PARAMETERS': [
         {
             'key': 'A',
-            'value': 1000
-        },
-        {
-            'key': 'B',
             'value': 's'
         }
     ],
-    'CURRENT_ANSWER': '0 1000'
+    'CURRENT_ANSWER': '0 0'
 }// Above for testing only */
 
 var swDisp = document.querySelector('#stopwatch');
+var unitDisp = document.querySelector('#unit');
 var ssButton = document.querySelector('#startstop');
 var countDisp = document.querySelector('#count');
 var restartButtons = document.querySelector('#restartbuttons');
@@ -32,22 +29,24 @@ switch (numParam) {
         unit = parameters[0].value;
 
         if (unit == 'ms') {
-            unit = ' milliseconds'
+            //unit = ' milliseconds'
             round = 1;
         }
         else if (unit == 'cs') {
-            unit = ' centiseconds'
+            //unit = ' centiseconds'
             round = 10;
         }
         else if (unit == 'ds') {
-            unit = ' deciseconds'
+            //unit = ' deciseconds'
             round = 100;
         }
         else {
-            unit = ' seconds';
+            unit = 's';
+            //unit = ' seconds';
             round = 1000;
         }
 }
+unitDisp.innerHTML = unit;
 
 var complete = false;
 var counter = 0;
@@ -71,7 +70,7 @@ function timer() {
         timePassed = Date.now() - startTime;
     }
 
-    swDisp.innerHTML = String(Math.floor(timePassed / round)) + unit;
+    swDisp.innerHTML = Math.floor(timePassed / round);
 }
 
 function startStopTimer() {
@@ -86,7 +85,7 @@ function startStopTimer() {
         confirmation.innerHTML = '';
         startTime = Date.now() - timePassed;
         timerRunning = true;
-        ssButton.innerHTML = "Stop";
+        ssButton.innerHTML = "Pause";
         setAnswer('');
     }
 }
@@ -114,7 +113,7 @@ function countdown() {
 function restartconf(restarter) {
     let warningMessage = "Are sure you would like to restart the " + restarter + "?";
 
-    warningMessage += '<br><button id="yes" class="whitebutton">Yes</button><button id="no" class="bluebutton">No</button>'
+    warningMessage += '<br><button id="yes" class="whitebutton">&#10003;</button><button id="no" class="bluebutton">X</button>'
 
     confirmation.innerHTML = warningMessage;
 
