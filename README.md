@@ -1,22 +1,20 @@
-# Stopwatch with counter (in alpha)
+# Stopwatch with counter
 
 ![start](extras/preview-images/start.png)
 |<img src="extras/preview-images/running.png" width="100px">|<img src="extras/preview-images/paused.png" width="100px">|<img src="extras/preview-images/confirm-restart.png" width="100px">|
 |:---:|:---:|:---:|
 |Running|Paused|Warning|
 
-*This plug-in is currently being tested, but has so far worked well.*
-
 ## Description
 
-Use this plug-in to add a stopwatch to your field. It also includes a counter you can use to keep track of something while timing, with buttons to both count up and count down. You can use it to count words read, number of mistakes, or whatever else you need to count. The count will never go below 0.
+Use this field plug-in to add a stopwatch to your field. It also includes a counter you can use to keep track of something while timing, with buttons to both count up and count down. You can use it to count words read, number of mistakes, or whatever else you need to count. The count will never go below 0.
 
 If an enumerator uses one of the restart buttons, they will have to confirm the restart. These buttons only appear when the timer is not running.
 
 An answer is not set until the stopwatch is stopped. The value is re-stored whenever the timer is stopped, or when the counter value is changed while the stopwatch is stopped. They can come back and continue where they left off with the same amount of time passed and the same count value.
 
 
-The value this plug-in returns is a space-separated list:
+The value this field plug-in returns is a space-separated list:
 
 0. The count on the counter
 1. The time that has passed on the stopwatch in milliseconds.
@@ -44,7 +42,7 @@ You can use the `selected-at()` function in order to get each individual value. 
 
 ## How to use
 
-**To use this plug-in as-is**, just download the [counterwithstopwatch.fieldplugin.zip](counterwithstopwatch.fieldplugin.zip) file from this repo, and attach it to your form.
+**To use this field plug-in as-is**, just download the [counterwithstopwatch.fieldplugin.zip](counterwithstopwatch.fieldplugin.zip) file from this repo, and attach it to your form.
 
 To create your own field plug-in using this as a template, follow these steps:
 
@@ -54,7 +52,7 @@ To create your own field plug-in using this as a template, follow these steps:
     * **Note:** be sure to update the `manifest.json` file as well.
 
 1. Zip the updated contents of the `source` directory.
-1. Rename the .zip file to *yourpluginname*.fieldplugin.zip (replace *yourpluginname* with the name you want to use for your plug-in).
+1. Rename the .zip file to *yourpluginname*.fieldplugin.zip (replace *yourpluginname* with the name you want to use for your field plug-in).
 1. You may then attach your new .fieldplugin.zip file to your form as normal.
 
 ## Parameters
