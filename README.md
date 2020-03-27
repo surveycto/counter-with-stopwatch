@@ -1,4 +1,4 @@
-# Stopwatch with counter
+# Counter with stopwatch
 
 ![start](extras/preview-images/start.png)
 |<img src="extras/preview-images/running.png" width="100px">|<img src="extras/preview-images/paused.png" width="100px">|<img src="extras/preview-images/confirm-restart.png" width="100px">|
