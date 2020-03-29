@@ -1,13 +1,3 @@
-/*fieldProperties = {
-    'PARAMETERS': [
-        {
-            'key': 'A',
-            'value': 's'
-        }
-    ],
-    'CURRENT_ANSWER': '0 0'
-}// Above for testing only */
-
 var swDisp = document.querySelector('#stopwatch');
 var unitDisp = document.querySelector('#unit');
 var ssButton = document.querySelector('#startstop');
