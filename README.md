@@ -1,27 +1,15 @@
 # Counter with stopwatch
 
-![start](extras/preview-images/start.png)
-|<img src="extras/preview-images/running.png" width="100px">|<img src="extras/preview-images/paused.png" width="100px">|<img src="extras/preview-images/confirm-restart.png" width="100px">|
-|:---:|:---:|:---:|
-|Running|Paused|Warning|
+![](extras/counter-with-stopwatch.jpg)
+
 
 ## Description
 
-Use this field plug-in to add a stopwatch to your field. It also includes a counter you can use to keep track of something while timing, with buttons to both count up and count down. You can use it to count words read, number of mistakes, or whatever else you need to count. The count will never go below 0.
+Use this field plug-in to add a stopwatch and a counter to your field. The stopwatch can display the elapsed time in seconds, deciseconds, centiseconds, and milliseconds. The counter can keep track of the number of occurrences of something. You can reset the current value of either the stopwatch, or the counter, or both. Both values are stored in the form data separated by a space:
 
-If an enumerator uses one of the restart buttons, they will have to confirm the restart. These buttons only appear when the timer is not running.
+`[count] [time (in ms)]`
 
 An answer is not set until the stopwatch is stopped. The value is re-stored whenever the timer is stopped, or when the counter value is changed while the stopwatch is stopped. They can come back and continue where they left off with the same amount of time passed and the same count value.
-
-
-The value this field plug-in returns is a space-separated list:
-
-0. The count on the counter
-1. The time that has passed on the stopwatch in milliseconds.
-
-You can use the `selected-at()` function in order to get each individual value. For example, if the field is called "timer1", you can use this expression to get the counter value:
-
-    selected-at(${stopwatch1}, 0)
 
 ## Default SurveyCTO feature support
 
@@ -57,26 +45,19 @@ To create your own field plug-in using this as a template, follow these steps:
 
 ## Parameters
 
-This field takes one parameters: the sisplay unit. If no unit is specified, it will display the time in seconds. If no parameters are specified, it will default to "seconds".
+| Key | Value |
+| --- | --- |
+| `time-unit` (optiona) | This is the unit of time measurement that will be displayed. Possible values are `s` (for seconds), `ds` (for deciseconds), `cs` (for centiseconds), or `ms` (for milliseconds).|
 
-You can use the following display units:  
-|**Abbr.**|**Full name**|**Unit in 1 second**|
-|:---|:---|:---|
-|`s`|seconds|1
-|`ds`|deciseconds|10
-|`cs`|centiseconds|100
-|`ms`|milliseconds|1000
-
-For example, if you use the following *appearance*:
-
-    custom-counterwithstopwatch(unit='cs')
-
-This will display the time in centiseconds.
+If no parameters are supplied, seconds will be shown by default.
 
 ## More resources
 
 * **Test form**  
-You can find a form definition in this repo here: [extras/test-form](extras/test-form).
-
+[extras/test-form](extras/test-form)
 * **Developer documentation**  
-More instructions for developing and using field plug-ins can be found here: [https://github.com/surveycto/Field-plug-in-resources](https://github.com/surveycto/Field-plug-in-resources)
+Instructions and resources for developing your own field plug-ins.  
+[https://github.com/surveycto/Field-plug-in-resources](https://github.com/surveycto/Field-plug-in-resources)
+* **User documentation**  
+How to get started using field plug-ins in your SurveyCTO form.  
+[https://docs.surveycto.com/02-designing-forms/03-advanced-topics/06.using-field-plug-ins.html](https://docs.surveycto.com/02-designing-forms/03-advanced-topics/06.using-field-plug-ins.html)
