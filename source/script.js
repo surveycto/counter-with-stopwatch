@@ -20,14 +20,9 @@ var startTime = 0; //This will get an actual value when the timer starts in star
 
 // Define what happens when the user resets the stopwatch
 function resetStopwatch() {
-    if (timerRunning) {
-        startStopTimer();
-        timePassed = 0;
-        startStopTimer();
-    } else {
-        timePassed = 0;
-    }
-    swDisp.innerHTML = timePassed;
+    startStopTimer(0);
+    timePassed = 0;
+    swDisp.innerHTML = 0;
     setAns();
     resetConfBox.style.display = "none";
     showResetButtons();
@@ -40,9 +35,10 @@ function timer() {
     }
     swDisp.innerHTML = Math.floor(timePassed / round);
 }
-// Defines what happens when the stopwatch button is pressed. This can function as either a 'start' button or a 'stop' button, depending on whether or not the stopwatch is currently running. 
-function startStopTimer() {
-    if (timerRunning) {
+// Defines what happens when the stopwatch button is pressed. This can function as either a 'start' button or a 'stop' button, depending on whether or not the stopwatch is currently running.
+//If parameter is 0, then should stop no matter what
+function startStopTimer(startOrStop) {
+    if (timerRunning || (startOrStop == 0)) {
         timerRunning = false;
         ssButton.querySelector(".play-icon").style.display = "block";
         ssButton.querySelector(".pause-icon").style.display = "none";
@@ -111,9 +107,6 @@ function setAns(){
 
 // define what happens when the user attempts to clear the response 
 function clearAnswer() {
-    if (timerRunning) {
-        startStopTimer();
-    }
     resetStopwatch()
     resetCounter();
     setAns();
