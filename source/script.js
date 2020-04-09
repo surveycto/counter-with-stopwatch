@@ -109,7 +109,7 @@ function setAns(){
 function clearAnswer() {
     resetStopwatch()
     resetCounter();
-    setAns();
+    setAnswer();
 }
 
 // Hide the reset buttons from the UI
