@@ -1,20 +1,45 @@
-// get the UI elements
-var swDisp = document.querySelector('#stopwatch');
-var unitDisp = document.querySelector('#unit');
-var ssButton = document.querySelector('#startstop');
-var countDisp = document.querySelector('#count');
-var resetButtons = document.getElementsByClassName("restart-buttons");
-var resetConfBox = document.getElementById('resetConfirmation');
+/*fieldProperties = {
+    'PARAMETERS': [
+        {
+            'key': 'duration',
+            'value': 10
+        },
+        {
+            'key': 'time-unit',
+            'value': 'ds'
+        }
+    ],
+    'CURRENT_ANSWER': '10 1000',
+    'METADATA': '10 1000' //How much time was left last time
+}
 
-// get parameters info
-var timeUnit = getPluginParameter('time-unit');
+function getMetaData(){
+    return fieldProperties.METADATA
+}
 
-// set up the timer and counter variables
-var round = 1000; //Default, may be changed
-var timePassed = 0; //Time passed so far
-var counter = 0;
-var timerRunning = false;
-var startTime = 0; //This will get an actual value when the timer starts in startStopTimer();
+function setMetaData(value){
+    fieldProperties.METADATA = value;
+}
+
+function getPluginParameter(param){
+    for(let p of fieldProperties.PARAMETERS){
+        let key = p.key
+        if(key == param){
+            return p.value;
+        }
+    }
+    return;
+}
+
+function setAnswer(ans){
+    console.log("Set answer to: " + ans);
+}
+
+function goToNextField(){
+    console.log("Moved to next field");
+}
+
+// Above for testing only */
 
 //// START stopwatch functions
 
@@ -28,10 +53,10 @@ function resetStopwatch() {
     showResetButtons();
 }
 // Set up the stopwatch
-setInterval(timer, 1);
 function timer() {
     if (timerRunning) {
         timePassed = Date.now() - startTime;
+        setMeta();
     }
     swDisp.innerHTML = Math.floor(timePassed / round);
 }
@@ -81,6 +106,7 @@ function countup() {
     if (counter > 0) {
         document.getElementById("counterdown").classList.remove("btn-secondary");
     }
+    setMeta();
 }
 // Decrease the current "count"
 function countdown() {
@@ -94,6 +120,7 @@ function countdown() {
     if (!timerRunning) {
         setAns();
     }
+    setMeta();
 }
 
 //// END counter functions
@@ -102,7 +129,14 @@ function countdown() {
 
 // define how to save the field's value in the form data
 function setAns(){
-    setAnswer(String(counter) + ' ' + String(timePassed));
+    let ans = String(counter) + ' ' + String(timePassed);
+    setMetaData(ans);
+    setAnswer(ans);
+}
+
+function setMeta(){
+    let ans = String(counter) + ' ' + String(timePassed);
+    setMetaData(ans);
 }
 
 // define what happens when the user attempts to clear the response 
@@ -139,19 +173,49 @@ function restartconf(restarter) {
     }
 }
 
-//// END global functions
-
-//// START field setup/loading
-
 // If the field label or hint contain any HTML that isn't in the form definition, then the < and > characters will have been replaced by their HTML character entities, and the HTML won't render. We need to turn those HTML entities back to actual < and > characters so that the HTML renders properly. This will allow you to render HTML from field references in your field label or hint.
 function unEntity(str){
     return str.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 }
+
+//// END global functions
+
+//// START field setup/loading
+
+// get the UI elements
+var swDisp = document.querySelector('#stopwatch');
+var unitDisp = document.querySelector('#unit');
+var ssButton = document.querySelector('#startstop');
+var countDisp = document.querySelector('#count');
+var resetButtons = document.getElementsByClassName("restart-buttons");
+var resetConfBox = document.getElementById('resetConfirmation');
+
+// get parameters info
+var timeUnit = getPluginParameter('time-unit');
+
+// set up the timer and counter variables
+var round = 1000; //Default, may be changed
+var timePassed; //Time passed so far
+var counter = 0;
+var timerRunning = false;
+var startTime = 0; //This will get an actual value when the timer starts in startStopTimer();
+
 if (fieldProperties.LABEL) {
     document.querySelector(".label").innerHTML = unEntity(fieldProperties.LABEL);
 }
 if (fieldProperties.HINT) {
     document.querySelector(".hint").innerHTML = unEntity(fieldProperties.HINT);
+}
+
+var metadata = getMetaData();
+
+if(metadata == null){
+    timePassed = 0;
+}
+else{
+    let parts = metadata.match(/[^ ]+/g);
+    counter = parseInt(parts[0]);
+    timePassed = parseInt(parts[1]);
 }
 
 // If the 'time-unit' parameter was supplied, make the appropriate adjustments
@@ -167,14 +231,6 @@ if (timeUnit) {
     }
 }
 
-// When loading the field, check to see if there is already a stored value. If yes, update the appropriate variables.
-if (fieldProperties.CURRENT_ANSWER != null) {
-    let parts = fieldProperties.CURRENT_ANSWER.match(/[^ ]+/g);
-    counter = parseInt(parts[0]);
-    timePassed = parseInt(parts[1]);
-    timerRunning = false;
-}
-
 // If the current value of 'count' is above 0 when the field loads, the 'decrease count' button should be blue 
 if (counter > 0) {
     document.getElementById("counterdown").classList.remove("btn-secondary");
@@ -185,5 +241,7 @@ countDisp.innerHTML = counter;
 
 // Show the current stopwatch value
 unitDisp.innerHTML = timeUnit;
+
+setInterval(timer, 1);
 
 //// END field setup/loading
