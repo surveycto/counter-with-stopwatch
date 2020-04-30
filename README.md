@@ -10,6 +10,8 @@ Use this field plug-in to add a stopwatch and a counter to your field. The stopw
 
 An answer is not set until the stopwatch is stopped. The value is re-stored whenever the timer is stopped, or when the counter value is changed while the stopwatch is stopped. They can come back and continue where they left off with the same amount of time passed and the same count value.
 
+[![Download now](extras/other-images/download-button.png)](https://github.com/surveycto/counter-with-stopwatch/raw/master/counterwithstopwatch.fieldplugin.zip)
+
 ## Default SurveyCTO feature support
 
 | Feature / Property | Support |
