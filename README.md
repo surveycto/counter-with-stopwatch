@@ -10,6 +10,8 @@ Use this field plug-in to add a stopwatch and a counter to your field. The stopw
 
 An answer is not set until the stopwatch is stopped. The value is re-stored whenever the timer is stopped, or when the counter value is changed while the stopwatch is stopped. They can come back and continue where they left off with the same amount of time passed and the same count value.
 
+This field plug-in also inherits functionality from the [baseline-text](https://github.com/surveycto/baseline-text) field plug-in.
+
 [![Download now](extras/other-images/download-button.png)](https://github.com/surveycto/counter-with-stopwatch/raw/master/counterwithstopwatch.fieldplugin.zip)
 
 ## Default SurveyCTO feature support
@@ -31,24 +33,17 @@ An answer is not set until the stopwatch is stopped. The value is re-stored when
 
 ## How to use
 
-**To use this field plug-in as-is**, just download the [counterwithstopwatch.fieldplugin.zip](counterwithstopwatch.fieldplugin.zip) file from this repo, and attach it to your form.
+**To use this field plug-in as-is**
 
-To create your own field plug-in using this as a template, follow these steps:
-
-1. Fork this repo
-1. Make changes to the files in the `source` directory.
-
-    * **Note:** be sure to update the `manifest.json` file as well.
-
-1. Zip the updated contents of the `source` directory.
-1. Rename the .zip file to *yourpluginname*.fieldplugin.zip (replace *yourpluginname* with the name you want to use for your field plug-in).
-1. You may then attach your new .fieldplugin.zip file to your form as normal.
+1. Download the [sample form](https://github.com/surveycto/timed-advance/tree/master/extras/test-form) from this repo and upload it to your SurveyCTO server.
+1. Download the [timed-advance.fieldplugin.zip](https://github.com/surveycto/baseline-text/raw/master/baseline-text.fieldplugin.zip) file from this repo, and attach it to the test form on your SurveyCTO server.
+1. Add a parameter if you would like to use a different unit (see below).
 
 ## Parameters
 
 | Key | Value |
 | --- | --- |
-| `time-unit` (optiona) | This is the unit of time measurement that will be displayed. Possible values are `s` (for seconds), `ds` (for deciseconds), `cs` (for centiseconds), or `ms` (for milliseconds).|
+| `time-unit` (optional) | This is the unit of time measurement that will be displayed. Possible values are `s` (for seconds), `ds` (for deciseconds), `cs` (for centiseconds), or `ms` (for milliseconds).|
 
 If no parameters are supplied, seconds will be shown by default.
 
