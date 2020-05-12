@@ -1,6 +1,6 @@
 <!--link rel="stylesheet" type="text/css" href="style.css">
 <script src="script.js" defer></script-->
-<div class="label default-question-text-size" id="label">{{{LABEL}}}</div>
+<div class="label default-question-text-size" id="label" dir="auto">{{{LABEL}}}</div>
 
 <!-- If there is an image specified in the media:image column, show it here -->
 {{#MEDIAIMAGE}}
@@ -23,7 +23,7 @@
     </video>
 {{/MEDIAVIDEO}}
 
-<div class="hint default-hint-text-size">{{{HINT}}}</div>
+<div class="hint default-hint-text-size" dir="auto">{{{HINT}}}</div>
 
 <div class="container">
     <div class="col section-stopwatch">
@@ -76,10 +76,10 @@
     <div class="col center" id="resetConfirmation" style="display: none;">
         <p id="confirmationMessage">Are you sure you want to restart the stopwatch?</p>
         <div class="container center">
-            <button id="cancelReset" class="btn btn-secondary" onclick="cancelReset()">
+            <button id="cancelReset" class="btn btn-secondary" onclick="cancelReset()" dir="auto">
                 Cancel
             </button>
-            <button id="confirmReset" class="btn btn-danger">
+            <button id="confirmReset" class="btn btn-danger" dir="auto">
                 Reset
             </button>
         </div>
