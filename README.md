@@ -35,8 +35,8 @@ This field plug-in also inherits functionality from the [baseline-text](https://
 
 **To use this field plug-in as-is**
 
-1. Download the [sample form](https://github.com/surveycto/timed-advance/tree/master/extras/test-form) from this repo and upload it to your SurveyCTO server.
-1. Download the [timed-advance.fieldplugin.zip](https://github.com/surveycto/baseline-text/raw/master/baseline-text.fieldplugin.zip) file from this repo, and attach it to the test form on your SurveyCTO server.
+1. Download the [sample form](https://github.com/surveycto/counter-with-stopwatch/tree/master/extras/test-form) from this repo and upload it to your SurveyCTO server.
+1. Download the [counter-with-stopwatch.fieldplugin.zip](https://github.com/surveycto/baseline-text/raw/master/baseline-text.fieldplugin.zip) file from this repo, and attach it to the test form on your SurveyCTO server.
 1. Add a parameter if you would like to use a different unit (see below).
 
 ## Parameters
