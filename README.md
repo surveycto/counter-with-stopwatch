@@ -1,6 +1,6 @@
 # Counter with stopwatch
 
-![](extras/counter-with-stopwatch.jpg)
+![](extras/preview-images/counter-with-stopwatch.jpg)
 
 ## Description
 
