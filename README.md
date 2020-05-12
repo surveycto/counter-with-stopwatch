@@ -54,8 +54,8 @@ If no parameters are supplied, seconds will be shown by default.
 
 ## More resources
 
-* **Test form**  
-[extras/test-form](extras/test-form)
+* **Sample form**  
+[extras/sample-form](extras/sample-form)
 * **Developer documentation**  
 Instructions and resources for developing your own field plug-ins.  
 [https://github.com/surveycto/Field-plug-in-resources](https://github.com/surveycto/Field-plug-in-resources)
