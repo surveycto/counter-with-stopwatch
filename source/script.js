@@ -219,16 +219,17 @@ if (metadata == null) {
 }
 
 // If the 'time-unit' parameter was supplied, make the appropriate adjustments
-if (timeUnit) {
-  if (timeUnit === 'ms') {
-    round = 1
-  } else if (timeUnit === 'cs') {
-    round = 10
-  } else if (timeUnit === 'ds') {
-    round = 100
-  } else {
-    round = 1000
-  }
+if (timeUnit == null) {
+  timeUnit = 's'
+}
+if (timeUnit === 'ms') {
+  round = 1
+} else if (timeUnit === 'cs') {
+  round = 10
+} else if (timeUnit === 'ds') {
+  round = 100
+} else {
+  round = 1000
 }
 
 // If the current value of 'count' is above 0 when the field loads, the 'decrease count' button should be blue
