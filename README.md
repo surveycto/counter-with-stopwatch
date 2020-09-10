@@ -32,7 +32,7 @@ For example, if the count is set to 3, and the stopwatch is stopped at 10,364 mi
 
     3 10364
 
-The time is always saved in milliseconds, even if the display is set to another unit. They can be retrieved in your SurveyCTO form using the item-at() function.
+The time is always saved in milliseconds, even if the display is set to another unit. They can be retrieved in your SurveyCTO form using the selected-at() function.
 
 An answer is not set until the stopwatch is stopped. The value is re-stored whenever the stopwatch is stopped, or when the counter value is changed while the stopwatch is stopped. The enumerator/respondent can come back and continue where they left off with the same amount of time passed and the same count value. For example, if the enumerator leaves the field with 5 seconds passed, when they return, the stopwatch will still say 5 seconds have passed.
 
