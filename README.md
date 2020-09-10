@@ -32,9 +32,11 @@ For example, if the count is set to 3, and the stopwatch is stopped at 10,364 mi
 
     3 10364
 
-The time is always saved in milliseconds, even if the display is set to another unit. They can be retrieved in your SurveyCTO form using the selected-at() function.
+The time is always saved in milliseconds, even if the display is set to another unit. You can use the `selected-at()` function in order to get each individual value. For example, if the field is called "stopwatch1", you can use this expression to get the counter value:
 
-An answer is not set until the stopwatch is stopped. The value is re-stored whenever the stopwatch is stopped, or when the counter value is changed while the stopwatch is stopped. The enumerator/respondent can come back and continue where they left off with the same amount of time passed and the same count value. For example, if the enumerator leaves the field with 5 seconds passed, when they return, the stopwatch will still say 5 seconds have passed.
+    selected-at(${stopwatch1}, 0)
+
+The field value is re-stored whenever the stopwatch time or counter value has changed. The enumerator/respondent can come back and continue where they left off with the same amount of time passed and the same count value. For example, if the enumerator leaves the field with 5 seconds passed, even while the stopwatch is still running, when they return, the stopwatch will still say 5 seconds have passed.
 
 ## How to use
 
@@ -48,9 +50,17 @@ An answer is not set until the stopwatch is stopped. The value is re-stored when
 
 ### Parameters
 
-| Key | Value |
-| --- | --- |
-| `time-unit` (optional) | This is the unit of time measurement that will be displayed. Possible values are `s` (for seconds), `ds` (for deciseconds), `cs` (for centiseconds), or `ms` (for milliseconds).|
+| Key | Value | Default |
+|:---|:---|:--|
+| `time-unit` (optional) | This is the unit of time measurement that will be displayed.| `s` |
+
+You can use the following display units:  
+|**Abbr.**|**Full name**|**Unit in 1 second**|
+|:---|:---|:---|
+|`s`|seconds|1
+|`ds`|deciseconds|10
+|`cs`|centiseconds|100
+|`ms`|milliseconds|1000
 
 If no parameters are supplied, seconds will be shown by default.  Make sure the unit is in single quotes, like this:
 
