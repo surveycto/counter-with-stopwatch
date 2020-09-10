@@ -52,7 +52,9 @@ An answer is not set until the stopwatch is stopped. The value is re-stored when
 | --- | --- |
 | `time-unit` (optional) | This is the unit of time measurement that will be displayed. Possible values are `s` (for seconds), `ds` (for deciseconds), `cs` (for centiseconds), or `ms` (for milliseconds).|
 
-If no parameters are supplied, seconds will be shown by default.
+If no parameters are supplied, seconds will be shown by default.  Make sure the unit is in single quotes, like this:
+
+    custom-counter-with-stopwatch(time-unit='cs')
 
 ### Default SurveyCTO feature support
 
