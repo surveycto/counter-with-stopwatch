@@ -15,12 +15,12 @@ This field plug-in also inherits functionality from the [baseline-text](https://
 ### Feature list
 
 * Stopwatch for keeping track of time passed
-* Button to start and pause timer as needed
+* Button to start and pause stopwatch as needed
 * Button to increase counter value, and button to decrease value (cannot go below 0)
-* Button to reset timer
+* Button to reset stopwatch
 * Button to reset counter
-* Warning when about to reset the counter or timer
-* Customization of unit for timer
+* Warning when about to reset the counter or stopwatch
+* Customization of unit for stopwatch
 
 ### Data format
 
@@ -34,7 +34,7 @@ For example, if the count is set to 3, and the stopwatch is stopped at 10,364 mi
 
 The time is always saved in milliseconds, even if the display is set to another unit. They can be retrieved in your SurveyCTO form using the item-at() function.
 
-An answer is not set until the stopwatch is stopped. The value is re-stored whenever the timer is stopped, or when the counter value is changed while the stopwatch is stopped. The enumerator/respondent can come back and continue where they left off with the same amount of time passed and the same count value. For example, if the enumerator leaves the field with 5 seconds passed, when they return, the stopwatch will still say 5 seconds have passed.
+An answer is not set until the stopwatch is stopped. The value is re-stored whenever the stopwatch is stopped, or when the counter value is changed while the stopwatch is stopped. The enumerator/respondent can come back and continue where they left off with the same amount of time passed and the same count value. For example, if the enumerator leaves the field with 5 seconds passed, when they return, the stopwatch will still say 5 seconds have passed.
 
 ## How to use
 
