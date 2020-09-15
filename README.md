@@ -4,7 +4,7 @@
 
 ## Description
 
-*Requires at least Android 7 or iOS 13 to work in SurveyCTO Collect mobile.*
+*Requires at least Android 7 or iOS 13 to work on SurveyCTO Collect.*
 
 Use this field plug-in to add a stopwatch and a counter to your field. The stopwatch can display the elapsed time in seconds, deciseconds, centiseconds, and milliseconds. The counter can keep track of the number of occurrences of something. You can reset the current value of either the stopwatch, or the counter, or both.
 
@@ -12,7 +12,7 @@ This field plug-in also inherits functionality from the [baseline-text](https://
 
 [![Download now](extras/other-images/download-button.png)](https://github.com/surveycto/counter-with-stopwatch/raw/master/counterwithstopwatch.fieldplugin.zip)
 
-### Feature list
+### Features
 
 * Stopwatch for keeping track of time passed
 * Button to start and pause stopwatch as needed
