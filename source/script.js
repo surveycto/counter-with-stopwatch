@@ -92,7 +92,7 @@ function startStopTimer (startOrStop) {
     timerRunning = true
     ssButton.querySelector('.play-icon').style.display = 'none'
     ssButton.querySelector('.pause-icon').style.display = 'block'
-    setAns('')
+    setAns()
   }
 }
 
