@@ -62,7 +62,7 @@ You can use the following display units:
 
 If no parameters are supplied, seconds will be shown by default.  Make sure the unit is in single quotes, like this:
 
-    custom-counter-with-stopwatch(time-unit='cs')
+    custom-counterwithstopwatch(time-unit='cs')
 
 ### Default SurveyCTO feature support
 
